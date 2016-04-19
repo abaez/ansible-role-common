@@ -1,0 +1,23 @@
+---
+
+- name: update all things
+  zypper: name=* state=latest
+
+- name: install pre dependencies
+  zypper: name={{ item }} state=present
+  with_items:
+    - curl
+    - wget
+    - vim
+
+- name: Install Version Control
+  zypper: name={{ item }} state=present
+  with_items:
+    - mercurial
+    - git
+    - svn
+
+- name: development installs
+  zypper: name={{ item }} type=pattern state=present
+  with_items:
+    - devel_C_C++
