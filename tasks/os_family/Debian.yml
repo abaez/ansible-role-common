@@ -1,0 +1,26 @@
+---
+- name: Check for updates
+  apt:
+    update_cache=yes
+    cache_valid_time=3600
+
+- name: Upgrade all the packages
+  sudo: yes
+  command: apt-get -y upgrade
+
+- name: install basic depends
+  apt: name={{ item }} state=present
+  with_items:
+    - curl
+    - wget
+    - vim
+
+- name: Install Version Control
+  apt: name={{ item }} state=present
+  with_items:
+    - mercurial
+    - git
+    - svn
+
+- name: Install Version Control
+  apt: name=build-essential state=present

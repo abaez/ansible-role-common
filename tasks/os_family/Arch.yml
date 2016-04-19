@@ -1,0 +1,24 @@
+---
+
+- name: update all things
+  pacman: update_cache=yes upgrade=yes
+
+- name: install pre dependencies
+  pacman: name={{ item }} state=present
+  with_items:
+    - curl
+    - wget
+    - vim
+
+- name: Install Version Control
+  pacman: name={{ item }} state=present
+  with_items:
+    - mercurial
+    - git
+    - svn
+
+- name: development installs
+  pacman: name={{ item }} state=present
+  with_items:
+    - base-devel
+    - abs
