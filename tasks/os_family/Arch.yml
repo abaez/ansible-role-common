@@ -15,7 +15,7 @@
   with_items:
     - mercurial
     - git
-    - svn
+    - subversion
 
 - name: development installs
   pacman: name={{ item }} state=present

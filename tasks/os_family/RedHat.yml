@@ -18,7 +18,7 @@
   with_items:
     - mercurial
     - git
-    - svn
+    - subversion
 
 - name: Install build dependencies
   yum:  name="@Development tools" state=present

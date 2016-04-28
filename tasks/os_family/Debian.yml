@@ -20,7 +20,7 @@
   with_items:
     - mercurial
     - git
-    - svn
+    - subversion
 
 - name: Install Version Control
   apt: name=build-essential state=present
