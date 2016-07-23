@@ -22,5 +22,5 @@
     - git
     - subversion
 
-- name: Install Version Control
+- name: Install build dependencies
   apt: name=build-essential state=present
