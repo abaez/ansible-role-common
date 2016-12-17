@@ -1,0 +1,12 @@
+---
+other_depend:
+  - curl
+  - wget
+  - vim
+  - tmux
+  - ncat
+
+vcs:
+  - mercurial
+  - git
+  - subversion

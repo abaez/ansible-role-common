@@ -10,17 +10,11 @@
 
 - name: install basic depends
   apt: name={{ item }} state=present
-  with_items:
-    - curl
-    - wget
-    - vim
+  with_items: "{{ other_depend }}"
 
 - name: Install Version Control
   apt: name={{ item }} state=present
-  with_items:
-    - mercurial
-    - git
-    - subversion
+  with_items: "{{ vcs }}"
 
 - name: Install build dependencies
   apt: name=build-essential state=present

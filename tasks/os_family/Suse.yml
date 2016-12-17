@@ -5,17 +5,11 @@
 
 - name: install pre dependencies
   zypper: name={{ item }} state=present
-  with_items:
-    - curl
-    - wget
-    - vim
+  with_items: "{{ other_depend }}"
 
 - name: Install Version Control
   zypper: name={{ item }} state=present
-  with_items:
-    - mercurial
-    - git
-    - subversion
+  with_items: "{{ vcs }}"
 
 - name: development installs
   zypper: name={{ item }} type=pattern state=present

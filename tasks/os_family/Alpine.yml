@@ -5,17 +5,11 @@
 
 - name: install pre dependencies
   apk: name={{ item }} state=present
-  with_items:
-    - curl
-    - wget
-    - vim
+  with_items: "{{ other_depend }}"
 
 - name: Install Version Control
   apk: name={{ item }} state=present
-  with_items:
-    - mercurial
-    - git
-    - subversion
+  with_items: "{{ vcs }}"
 
 - name: Build essentials
   apt: name=build-base state=present
