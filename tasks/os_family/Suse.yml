@@ -1,8 +1,5 @@
 ---
 
-- name: update all things
-  zypper: name=* state=latest
-
 - name: install pre dependencies
   zypper: name={{ item }} state=present
   with_items: "{{ other_depend }}"
