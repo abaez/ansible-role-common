@@ -10,6 +10,7 @@
 
 - name: install basic depends
   apt: name={{ item }} state=present
+  when: item != "ncat"
   with_items: "{{ other_depend }}"
 
 - name: Install Version Control
