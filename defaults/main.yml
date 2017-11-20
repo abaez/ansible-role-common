@@ -5,6 +5,8 @@ other_depend:
   - vim
   - tmux
   - ncat
+  - strace
+  - jq
 
 vcs:
   - mercurial
